@@ -10,25 +10,27 @@ import SwiftUI
 struct ContentView: View {
     
     @State var tabSelected: Int = 0
+    @StateObject var viewModel: CarListViewModel = .init()
+    
+    @State var selection: Int? = nil
     
     var body: some View {
         
         TabView(selection: $tabSelected) {
             
             FirstScreen() {
+                
+                selection = 1
                 tabSelected = 1
-                #warning("""
-                    не доконца только понял 5 пункт в дз:
-                    - "На первом табе должна быть кнопка открывающая второй таб и один из пунктов там"
-                    Как выбрать один из этих пунктов? надо как то выбрать элемент из list?
-                """)
-             
+                //viewModel.selection = 1
+                
             }
+                
                 .tag(0)
                 .tabItem{
                     Label("tram", systemImage: "tram")
                 }
-            SecondScreen()
+            SecondScreen(selection: $selection)
                 .tag(1)
                 .tabItem{
                     Label("auto", systemImage: "car")

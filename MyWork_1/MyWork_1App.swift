@@ -10,9 +10,10 @@ import SwiftUI
 @main
 struct MyWork_1App: App {
     var body: some Scene {
+        
         WindowGroup {
             ContentView()
-                .environmentObject(CarListViewModel())
+                //.environmentObject(CarListViewModel())
         }
     }
 }

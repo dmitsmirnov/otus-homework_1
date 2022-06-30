@@ -15,7 +15,8 @@ struct FirstScreen: View {
     var body: some View {
         VStack {
             
-            Button(action: action, label: {
+            Button(action: action,
+            label: {
                 Text("open second window")
             })
             
